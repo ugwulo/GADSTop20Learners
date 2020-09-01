@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">GADSTop20Learners</string>
+    <string name="tab_1_text">Learning Leaders</string>
+    <string name="tab_2_text">Skill IQ Leaders</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Test_Data">
+        <item>Ndubuisi Ugwulo</item>
+        <item>Item 1B</item>
+        <item>Item 1C</item>
+        <item>Ndubuisi Ugwulo</item>
+        <item>Item 1E</item>
+        <item>Item 1F</item>
+        <item>Item 1G</item>
+        <item>Item 1H</item>
+        <item>Item 1I</item>
+        <item>Ndubuisi Ugwulo</item>
+        <item>Item 1K</item>
+        <item>Item 1L</item>
+        <item>Item 1M</item>
+        <item>Item 1N</item>
+        <item>Ndubuisi Ugwulo</item>
+        <item>Item 1P</item>
+        <item>Item 1Q</item>
+        <item>Item 1R</item>
+        <item>Item 1S</item>
+        <item>Item 1T</item>
+    </string-array>
+
+</resources>
