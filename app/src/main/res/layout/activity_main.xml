@@ -2,14 +2,17 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:paddingTop="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.GADSTop20Learners.AppBarOverlay">
+        android:theme="@style/SubmitActivityTheme">
 
 
 
@@ -25,11 +28,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:minHeight="?actionBarSize"
                 android:padding="@dimen/appbar_padding"
+                android:textColor="@color/white"
                 android:text="LEADERBOARD"
                 android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
-
             <Button
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"

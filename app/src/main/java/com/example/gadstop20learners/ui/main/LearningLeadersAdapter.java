@@ -11,26 +11,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.gadstop20learners.R;
-import com.example.gadstop20learners.model.LearningHours;
+import com.example.gadstop20learners.model.LearningLeaders;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class LearningLeadersAdapter extends RecyclerView.Adapter<LearningLeadersAdapter.ViewHolder> {
+public class LearningLeadersAdapter extends RecyclerView.Adapter<LearningLeadersAdapter.LearningViewHolder> {
 
-    private final List<LearningHours> mLearningHours;
-    LearningLeadersAdapter(List<LearningHours> hours){
+    private List<LearningLeaders> mLearningHours;
+    LearningLeadersAdapter(List<LearningLeaders> hours){
         this.mLearningHours = hours;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LearningViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_learning_leaders, parent, false);
-        return new ViewHolder(view);
+        return new LearningViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LearningViewHolder holder, int position) {
         holder.bind(mLearningHours.get(position));
     }
 
@@ -39,10 +40,11 @@ public class LearningLeadersAdapter extends RecyclerView.Adapter<LearningLeaders
         return mLearningHours.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class LearningViewHolder extends RecyclerView.ViewHolder {
         TextView learnerName, learningHours, learnerCountry;
         ImageView imageUrl;
-        public ViewHolder(View itemView) {
+
+        public LearningViewHolder(View itemView) {
             super(itemView);
             learnerName = itemView.findViewById(R.id.text_learner_name);
             learningHours = itemView.findViewById(R.id.text_hours);
@@ -50,10 +52,10 @@ public class LearningLeadersAdapter extends RecyclerView.Adapter<LearningLeaders
             imageUrl = itemView.findViewById(R.id.learner_badge);
         }
 
-        public void bind(LearningHours hours) {
-            learnerName.setText(hours.getLearnerName());
-            learningHours.setText(hours.getLearningHours());
-            learnerCountry.setText(hours.getLearnerCountry());
+        public void bind(LearningLeaders hours) {
+            learnerName.setText(hours.getName());
+            learningHours.setText(String.valueOf(hours.getHours()));
+            learnerCountry.setText(hours.getCountry());
 
             Glide.with(itemView.getContext())
                     .load(hours.getBadgeUrl())

@@ -2,8 +2,6 @@ package com.example.gadstop20learners.ui.main;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -16,10 +14,11 @@ import android.view.ViewGroup;
 
 import com.example.gadstop20learners.R;
 import com.example.gadstop20learners.databinding.FragmentLearningLeadersBinding;
-import com.example.gadstop20learners.model.LearningHours;
-import com.example.gadstop20learners.viewmodel.HoursViewModel;
+import com.example.gadstop20learners.model.LearningLeaders;
+import com.example.gadstop20learners.viewmodel.LearningLeadersViewModel;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class LearningLeadersFragment extends Fragment {
@@ -35,30 +34,14 @@ public class LearningLeadersFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        HoursViewModel viewModel = new ViewModelProvider(getActivity()).get(HoursViewModel.class);
-        viewModel.getLearnerHours().observe(getActivity(), new Observer<List<LearningHours>>() {
+        LearningLeadersViewModel viewModel = new ViewModelProvider(Objects.requireNonNull(getActivity())).get(LearningLeadersViewModel.class);
+        viewModel.getLearnerHours().observe(getActivity(), new Observer<List<LearningLeaders>>() {
             @Override
-            public void onChanged(List<LearningHours> hoursList) {
+            public void onChanged(List<LearningLeaders> hoursList) {
                 recyclerView.setAdapter(new LearningLeadersAdapter(hoursList));
             }
         });
         return view;
     }
 
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-//        recyclerView.setLayoutManager(layoutManager);
-//
-//        HoursViewModel viewModel = new ViewModelProvider(getActivity()).get(HoursViewModel.class);
-//        viewModel.getLearnerHours().observe(getActivity(), new Observer<List<LearningHours>>() {
-//            @Override
-//            public void onChanged(List<LearningHours> hoursList) {
-//                recyclerView.setAdapter(new LearningLeadersAdapter(hoursList));
-//            }
-//        });
-//    }
 }

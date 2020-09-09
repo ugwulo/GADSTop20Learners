@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".SplashActivity"
-    android:background="@color/black">
+    >
 
     <ImageView
-        android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/splash"/>
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash_image"/>
 </RelativeLayout>

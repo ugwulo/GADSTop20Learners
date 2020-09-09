@@ -10,4 +10,5 @@
 
     <color name="grey">#303030</color>
     <color name="default_color">#DD000000</color>
+    <color name="orange">#f17a0a</color>
 </resources>

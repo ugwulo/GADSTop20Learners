@@ -14,8 +14,19 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="SubmitActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/default_color</item>
+        <item name="colorPrimaryDark">@color/default_color</item>
+        <item name="colorOnPrimary">#308933</item>
+    </style>
+
     <style name="splashScreenTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
     </style>
 
     <style name="Theme.GADSTop20Learners.NoActionBar">
@@ -23,14 +34,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="ButtonStyle">
-        <item name="cornerRadius">20dp</item>
-        <item name="android:background">@color/white</item>
-    </style>
 
     <style name="Theme.GADSTop20Learners.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
     </style>
 
     <style name="Theme.GADSTop20Learners.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionAndStatusBar" parent="Theme.GADSTop20Learners.NoActionBar">
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+    </style>
 
 </resources>

@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         card_view:cardCornerRadius="4dp"
         card_view:cardMaxElevation="2dp"
         card_view:cardElevation="4dp"
@@ -19,28 +19,34 @@
             android:layout_height="wrap_content"
             android:padding="5dp">
 
-            <ImageView
-                android:layout_width="90dp"
-                android:layout_height="match_parent"
-                android:scaleType="fitStart"
-                android:id="@+id/learner_badge"
-                android:src="@drawable/top_learner_badge"/>
+            <LinearLayout
+                android:id="@+id/badge_container"
+                android:layout_width="100dp"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitStart"
+                    android:id="@+id/iq_learner_badge"
+                    android:src="@drawable/skill_iq"/>
+            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/name"
-                android:layout_margin="5dp"
                 android:layout_alignParentTop="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/learner_badge"
-                android:layout_marginStart="4dp">
+                android:layout_toEndOf="@id/badge_container"
+                android:layout_marginStart="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ndubuisi Ugwulo"
                     android:textSize="23sp"
-                    android:id="@+id/text_learner_name"
+                    android:id="@+id/iq_learner_name"
                     android:textColor="#000"/>
             </RelativeLayout>
 
@@ -48,8 +54,8 @@
                 android:layout_below="@id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/learner_badge"
-                android:layout_marginStart="7dp">
+                android:layout_toEndOf="@id/badge_container"
+                android:layout_marginStart="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -60,13 +66,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="223"
-                        android:id="@+id/text_hours"/>
+                        android:id="@+id/text_skill_iq"/>
 
                     <TextView
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="learning hours,"
+                        android:text="Skill IQ Score,"
                         android:id="@+id/txt_phrase"
                         android:layout_marginStart="10dp"/>
 
@@ -74,9 +80,9 @@
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kenya"
+                        android:text="Kenya Nigeria"
                         android:layout_marginStart="10dp"
-                        android:id="@+id/text_learner_country"/>
+                        android:id="@+id/iq_learner_country"/>
 
                 </LinearLayout>
 

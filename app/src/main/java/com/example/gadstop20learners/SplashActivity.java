@@ -9,13 +9,14 @@ import android.os.Handler;
 import com.example.gadstop20learners.databinding.ActivitySplashBinding;
 
 public class SplashActivity extends AppCompatActivity {
-    private static boolean isSplashLoaded = false;
+    private static boolean isSplashLoaded = true;
     ActivitySplashBinding mSplashBinding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSplashBinding = ActivitySplashBinding.inflate(getLayoutInflater());
+
 
         if (isSplashLoaded) {
             setContentView(mSplashBinding.getRoot());
@@ -25,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                     finish();
                 }
-            }, secondsDelayed * 2000);
+            }, secondsDelayed * 1000);
 
             isSplashLoaded = true;
         }
